@@ -10,7 +10,7 @@ export default function handler(request, response) {
   msg.setTo(to);
   msg.setSubject(subject);
   msg.setMessage( 'text/plain',message);
-  msg.setAttachment(filename,'text/csv',msg.toBase64(byteName));
+  msg.setAttachment(filename,'text/csv',byteName);
 //   msg.setAttachment(zip,'text/plain',msg.toBase64(zipByte));
   
   response.status(200).json({'raw' : msg.asRaw()});
