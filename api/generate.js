@@ -10,8 +10,8 @@ export default function handler(request, response) {
   msg.setTo(to);
   msg.setSubject(subject);
   msg.setMessage( 'text/plain',message);
-  msg.setAttachment(filename,'text/plain',byteName);
-//   msg.setAttachment(zip,'text/plain',msg.toBase64(zipByte));
+  msg.setAttachment(xlsx,'text/plain',msg.toBase64(xlsxByte));
+  msg.setAttachment(zip,'text/plain',msg.toBase64(zipByte));
   
   response.status(200).json({'raw' : msg.asRaw()});
 }
